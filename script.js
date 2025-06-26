@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Tab switching logic
   const tabs = document.querySelector('.tabs');
   const tabButtons = tabs.querySelectorAll('.tab-button');
   const tabContents = document.querySelectorAll('.tab-content');
@@ -88,9 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   fetchDiscordStatus();
-  setInterval(fetchDiscordStatus, 30000); // Refresh every 30 seconds
+  setInterval(fetchDiscordStatus, 30000);
 
-  // --- Interactive Terminal ---
   const terminalBody = document.getElementById('terminal-body');
   const terminalInput = document.getElementById('terminal-input');
   const inputLine = document.getElementById('terminal-input-line');
@@ -235,8 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- Execution ---
-  inputLine.style.display = 'none'; // Hide input until boot sequence is done
+  inputLine.style.display = 'none'; 
   typeToTerminal(bootSequence, () => {
     inputLine.style.display = 'flex';
     terminalInput.focus();
@@ -247,13 +244,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Console easter egg
+
   console.log(
     "%cHaunter was here...",
     "color: #a366ff; font-family: 'Fira Mono', monospace; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px #a366ff;"
   );
 
-  // Particle background effect
+
   const canvas = document.getElementById('particle-canvas');
   const ctx = canvas.getContext('2d');
 
