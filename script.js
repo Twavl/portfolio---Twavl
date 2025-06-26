@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Tab switching logic
   const tabs = document.querySelector('.tabs');
   const tabButtons = tabs.querySelectorAll('.tab-button');
   const tabContents = document.querySelectorAll('.tab-content');
@@ -75,6 +76,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
         statusTextElement.textContent = statusText;
 
+        const activityElement = document.getElementById('discord-activity');
+        if (activityElement) {
+          activityElement.innerHTML = ''; // Clear previous activity
+          if (game) {
+            activityElement.innerHTML = `
+              <div class="activity-block">
+                <span class="activity-emoji">🎮</span>
+                <span class="activity-title">Playing <b>${game.name}</b></span>
+              </div>
+            `;
+          } else if (spotify) {
+            activityElement.innerHTML = `
+              <div class="activity-block">
+                <span class="activity-emoji">🎵</span>
+                <span class="activity-title">Listening to <b>${spotify.song}</b></span>
+                <span class="activity-artist">by ${spotify.artist}</span>
+                <img class="activity-album-art" src="${spotify.album_art_url}" alt="Album Art" />
+              </div>
+            `;
+          } else if (customStatus && customStatus.state) {
+            activityElement.innerHTML = `
+              <div class="activity-block">
+                <span class="activity-emoji">💬</span>
+                <span class="activity-title">${customStatus.state}</span>
+              </div>
+            `;
+          }
+        }
+
       } else {
          statusElement.className = `discord-status offline`;
          statusTextElement.textContent = 'Offline';
@@ -87,8 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   fetchDiscordStatus();
-  setInterval(fetchDiscordStatus, 30000);
+  setInterval(fetchDiscordStatus, 30000); // Refresh every 30 seconds
 
+  // --- Interactive Terminal ---
   const terminalBody = document.getElementById('terminal-body');
   const terminalInput = document.getElementById('terminal-input');
   const inputLine = document.getElementById('terminal-input-line');
@@ -233,7 +264,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  inputLine.style.display = 'none'; 
+  // --- Execution ---
+  inputLine.style.display = 'none'; // Hide input until boot sequence is done
   typeToTerminal(bootSequence, () => {
     inputLine.style.display = 'flex';
     terminalInput.focus();
@@ -244,13 +276,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
+  // Console easter egg
   console.log(
     "%cHaunter was here...",
     "color: #a366ff; font-family: 'Fira Mono', monospace; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px #a366ff;"
   );
 
-
+  // Particle background effect
   const canvas = document.getElementById('particle-canvas');
   const ctx = canvas.getContext('2d');
 
