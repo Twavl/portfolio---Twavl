@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <div class="background"></div>
+  <div class="main-container">
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="download (2).jpeg" alt="Haunter PFP" class="pfp">
+        <h1>&lt;Twavl/&gt;</h1>
+        <p class="subtitle">Developer & Creator</p>
+        <div class="discord-status">
+          <span class="status-dot"></span>
+          <span id="status-text" class="status-text">Loading Status...</span>
+        </div>
+      </div>
+      <nav class="tabs">
+        <button class="tab-button active" data-tab="home">Home</button>
+        <button class="tab-button" data-tab="projects">Projects</button>
+        <button class="tab-button" data-tab="contact">Contact</button>
+      </nav>
+    </aside>
+    <main class="content">
+      <section id="home" class="tab-content active">
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="terminal-title">consokle</div>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <!-- JS will inject initial boot sequence here -->
+            <div class="terminal-line" id="terminal-input-line">
+              <span class="prompt">&gt;</span>
+              <input type="text" id="terminal-input" class="terminal-input" autocomplete="off">
+            </div>
+          </div>
+        </div>
+        <h2>About Me</h2>
+        <div class="interests-grid">
+          <div class="interest-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"></line><line x1="8" y1="9" x2="8" y2="13"></line><line x1="15" y1="12" x2="15.01" y2="12"></line><line x1="18" y1="10" x2="18.01" y2="10"></line><path d="M17.32 5H6.68a4 4 0 0 0-3.97 3.59c-.2.97-.02 2.03.54 2.89l1.4 1.83c.33.42.8.69 1.31.69h8.08c.51 0 .98-.27 1.31-.69l1.4-1.83c.56-.86.74-1.92.54-2.89A4 4 0 0 0 17.32 5z"></path></svg>
+            <span>Games are cool to play and [cheat in]</span>
+          </div>
+          <div class="interest-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <span>Music is cool</span>
+          </div>
+          <div class="interest-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <span>i like to code friends</span>
+          </div>
+          <div class="interest-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span>God i love cp! :D</span>
+          </div>
+        </div>
+        <h2>Languages & Skills</h2>
+        <div class="languages">
+          <div class="lang">HTML</div>
+          <div class="lang">Java</div>
+          <div class="lang">Python</div>
+          <div class="lang">Batch</div>
+          <div class="lang">C++</div>
+          <div class="lang">C#</div>
+          <div class="lang">JavaScript</div>
+          <div class="lang">CSS</div>
+        </div>
+      </section>
+      <section id="projects" class="tab-content">
+        <h2>My Projects</h2>
+        <p>Nah bums, you all skids</p>
+      </section>
+      <section id="contact" class="tab-content">
+        <h2>Get In Touch</h2>
+        <p>Do not text me fucktards</p>
+        <div class="social-links">
+          <a id="discord-link" href="#" target="_blank" class="social-link discord">
+            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.222 0c-1.223.444-2.332 1.002-3.332 1.557-1.002.556-2.003 1.112-3.004 1.668-2.89 1.668-4.89 3.003-6.002 4.005-1.112 1.002-1.78 2.003-2.112 3.114a12.63 12.63 0 0 0-.222 3.332c0 1.223.222 2.446.445 3.558.222 1.112.556 2.112 1 3.003s1 1.668 1.557 2.335c.556.667 1.112 1.223 1.668 1.668 2.112 1.668 4.448 2.669 7.006 3.003.778.11 1.557.11 2.335.11.89 0 1.78-.11 2.558-.223 1.112-.222 2.112-.445 3.004-.778.89-.334 1.668-.778 2.335-1.224a8.34 8.34 0 0 0 1.89-1.89c.556-.667 1-1.446 1.334-2.224.334-.778.556-1.557.778-2.446.223-.89.334-1.78.334-2.669a10.33 10.33 0 0 0-.223-2.669c-.11-.89-.333-1.668-.556-2.446-.222-.778-.555-1.445-.889-2.112-.333-.667-.777-1.223-1.222-1.78-.556-.556-1.112-1.11-1.78-1.555-.667-.445-1.334-.89-2.002-1.223C22.11 1.223 21.222.556 20.222 0zm-5.894 11.233c.89 0 1.557.667 1.557 1.557 0 .89-.667 1.556-1.557 1.556-.89 0-1.556-.667-1.556-1.556s.667-1.557 1.556-1.557zm-6.228 0c.89 0 1.557.667 1.557 1.557 0 .89-.667 1.556-1.557 1.556-.89 0-1.556-.667-1.556-1.556s.666-1.557 1.556-1.557z"/></svg>
+            <span>.twavl</span>
+          </a>
+          <a href="https://github.com/Twavl" target="_blank" class="social-link github">
+             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <span>@Twavl</span>
+          </a>
+        </div>
+      </section>
+      <div id="tab-loader">
+        <div class="loader-text"></div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>
