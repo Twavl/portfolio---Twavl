@@ -486,73 +486,49 @@ body.hack-theme .pfp {
   filter: drop-shadow(0 0 5px var(--glow-color));
 }
 
-.discord-activity {
-  margin-top: 15px;
-  background: rgba(44, 0, 80, 0.25);
-  border: 1px solid var(--primary-color);
-  border-radius: 16px;
-  padding: 16px 20px;
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.project-list li {
+  background: var(--secondary-color);
+  border: 1.5px solid var(--primary-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(163, 102, 255, 0.10), 0 1.5px 8px var(--primary-color) inset;
+  padding: 28px 32px;
+  min-width: 220px;
+  transition: all 0.25s cubic-bezier(.4,2,.6,1);
   display: flex;
   align-items: center;
-  gap: 18px;
-  box-shadow: 0 2px 12px rgba(163, 102, 255, 0.08);
-  min-height: 60px;
-  max-width: 320px;
-  transition: background 0.3s;
+  justify-content: center;
 }
 
-.activity-block {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.project-list li:hover {
+  background: var(--primary-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 32px rgba(163, 102, 255, 0.18), 0 0 16px var(--accent-color);
+  transform: translateY(-6px) scale(1.03);
 }
 
-.activity-emoji {
-  font-size: 2rem;
-  filter: drop-shadow(0 0 6px var(--glow-color));
-  margin-right: 6px;
-}
-
-.activity-title {
-  font-size: 1.1rem;
-  color: var(--accent-color);
+.project-list a {
+  color: var(--glow-color);
   font-family: 'Fira Mono', monospace;
-  font-weight: bold;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.activity-artist {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin-left: 4px;
-}
-
-.activity-album-art {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px var(--glow-color);
-  margin-left: 10px;
-  object-fit: cover;
-  border: 2px solid var(--accent-color);
-}
-
-@media (max-width: 768px) {
-  .discord-activity {
-    max-width: 100%;
-    padding: 12px 8px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .activity-block {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-  .activity-album-art {
-    width: 40px;
-    height: 40px;
-    margin-left: 0;
-    margin-top: 6px;
-  }
+.project-list a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--accent-color);
 } 
