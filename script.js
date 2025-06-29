@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Tab switching logic
   const tabs = document.querySelector('.tabs');
   const tabButtons = tabs.querySelectorAll('.tab-button');
   const tabContents = document.querySelectorAll('.tab-content');
@@ -75,35 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         statusTextElement.textContent = statusText;
-
-        const activityElement = document.getElementById('discord-activity');
-        if (activityElement) {
-          activityElement.innerHTML = ''; // Clear previous activity
-          if (game) {
-            activityElement.innerHTML = `
-              <div class="activity-block">
-                <span class="activity-emoji">🎮</span>
-                <span class="activity-title">Playing <b>${game.name}</b></span>
-              </div>
-            `;
-          } else if (spotify) {
-            activityElement.innerHTML = `
-              <div class="activity-block">
-                <span class="activity-emoji">🎵</span>
-                <span class="activity-title">Listening to <b>${spotify.song}</b></span>
-                <span class="activity-artist">by ${spotify.artist}</span>
-                <img class="activity-album-art" src="${spotify.album_art_url}" alt="Album Art" />
-              </div>
-            `;
-          } else if (customStatus && customStatus.state) {
-            activityElement.innerHTML = `
-              <div class="activity-block">
-                <span class="activity-emoji">💬</span>
-                <span class="activity-title">${customStatus.state}</span>
-              </div>
-            `;
-          }
-        }
 
       } else {
          statusElement.className = `discord-status offline`;
